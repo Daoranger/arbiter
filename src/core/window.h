@@ -1,24 +1,23 @@
-//
-// Created by hoang on 6/18/2026.
-//
+#ifndef GAMEENGINE_WINDOW_H
+#define GAMEENGINE_WINDOW_H
 
 #include <string>
 #include <SDL3/SDL.h>
 
-#ifndef GAMEENGINE_WINDOW_H
-#define GAMEENGINE_WINDOW_H
-
 class Window
 {
 public:
-    Window(std::string title, int width, int length);                               // default constructor
+    Window(std::string title, int width, int height);                               // default constructor
     ~Window();
 
+    bool Initialize();
+    void Shutdown();
+
 private:
-    
     std::string title_;
     int width_;
-    int length_;
+    int height_;
+    SDL_Window* sdl_window_;
 };
 
 #endif //GAMEENGINE_WINDOW_H
