@@ -1,7 +1,8 @@
-#ifndef GAMEENGINE_APPLICATION_H
-#define GAMEENGINE_APPLICATION_H
+#ifndef ARBITERENGINE_APPLICATION_H
+#define ARBITERENGINE_APPLICATION_H
 
 #include "window.h"
+#include "input.h"
 
 
 class Application {
@@ -14,14 +15,14 @@ public:
     void Shutdown();
 
 private:
-    void ProcessInput();
     void Update();
     void Render();
 
     bool running_;
     Window window_;
+    Input input_;
 };
 
 
 
-#endif //GAMEENGINE_APPLICATION_H
+#endif //ARBITERENGINE_APPLICATION_H

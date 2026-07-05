@@ -1,5 +1,5 @@
-#ifndef GAMEENGINE_WINDOW_H
-#define GAMEENGINE_WINDOW_H
+#ifndef ARBITERENGINE_WINDOW_H
+#define ARBITERENGINE_WINDOW_H
 
 #include <string>
 #include <SDL3/SDL.h>
@@ -20,4 +20,4 @@ private:
     SDL_Window* sdl_window_;
 };
 
-#endif //GAMEENGINE_WINDOW_H
+#endif //ARBITERENGINE_WINDOW_H

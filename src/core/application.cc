@@ -1,5 +1,7 @@
 #include "application.h"
 
+#include <iostream>
+
 Application::Application()
     : running_(false)
     , window_("Arbiter Engine", 800, 600)
@@ -27,7 +29,22 @@ void Application::Run()
 {
     while (running_)
     {
-        ProcessInput();
+        input_.ProcessEvents();
+        if (input_.QuitRequested())
+        {
+            running_ = false;
+        }
+
+        if (input_.IsKeyDown(SDL_SCANCODE_W))
+        {
+            std::cout << "W keydown\n";
+        }
+
+        if (input_.IsMouseButtonDown(SDL_BUTTON_LEFT))
+        {
+            std::cout << "Left mouse button down\n";
+        }
+
         Update();
         Render();
     }
@@ -37,18 +54,6 @@ void Application::Shutdown()
 {
     window_.Shutdown();
     SDL_Quit();
-}
-
-void Application::ProcessInput()
-{
-    SDL_Event event;
-    while (SDL_PollEvent(&event))
-    {
-        if (event.type == SDL_EVENT_QUIT)
-        {
-            running_ = false;
-        }
-    }
 }
 
 void Application::Update()
