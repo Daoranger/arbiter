@@ -33,6 +33,10 @@ FetchContent_MakeAvailable(googletest)
 add_executable(Arbiter
         demo/main.cpp
         src/Arbiter/Core/Application.cpp
+        src/Arbiter/AI/Utility/Consideration.cpp
+        src/Arbiter/AI/Utility/ResponseCurve.cpp
+        src/Arbiter/AI/Utility/LinearCurve.cpp
+        src/Arbiter/AI/Utility/Action.cpp
 )
 
 target_include_directories(Arbiter PRIVATE include)
