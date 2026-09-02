@@ -9,13 +9,11 @@
 #include "Arbiter/AI/Utility/Actions/ShootAction.h"
 #include "Arbiter/AI/Utility/Actions/SurrenderAction.h"
 #include "Arbiter/AI/Utility/UtilityAIAgent.h"
+#include "Arbiter/ECS/Entity.h"
 
 int main()
 {
-    arbiter::Blackboard blackboard;
-    blackboard.Set("Health", 1.0f);
-    blackboard.Set("Ammo", 0.15f);
-    blackboard.Set("Morale", 1.0f);
+    arbiter::Entity entity;
 
     auto shootAction = std::make_unique<arbiter::ShootAction>();
     shootAction->AddConsideration(

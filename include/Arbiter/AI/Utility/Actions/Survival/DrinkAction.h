@@ -4,9 +4,10 @@
 
 namespace arbiter
 {
-    class ShootAction : public Action
+    class DrinkAction : public Action
     {
     public:
+        DrinkAction();
         void Execute() override;
     };
 }
