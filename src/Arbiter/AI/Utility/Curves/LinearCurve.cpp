@@ -1,4 +1,4 @@
-#include "Arbiter/AI/Utility/LinearCurve.h"
+#include "../../../../../include/Arbiter/AI/Utility/Curves/LinearCurve.h"
 
 #include <algorithm>
 
@@ -8,7 +8,7 @@ arbiter::LinearCurve::LinearCurve(float slope, float intercept)
 {
 }
 
-float arbiter::LinearCurve::Evaluate(float factor)
+float arbiter::LinearCurve::Evaluate(float factor) const
 {
     float score = m_slope * factor + m_intercept;
     score = std::clamp(score, 0.0f, 1.0f);

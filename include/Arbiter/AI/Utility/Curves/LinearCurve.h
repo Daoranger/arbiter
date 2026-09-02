@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ResponseCurve.h"
+#include "Arbiter/AI/Utility/Curves/ResponseCurve.h"
 
 namespace arbiter
 {
@@ -8,7 +8,7 @@ namespace arbiter
     {
     public:
         LinearCurve(float slope, float intercept);
-        float Evaluate(float factor) override;
+        float Evaluate(float factor) const override;
 
     private:
         float m_slope;

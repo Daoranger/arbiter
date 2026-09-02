@@ -34,9 +34,13 @@ add_executable(Arbiter
         demo/main.cpp
         src/Arbiter/Core/Application.cpp
         src/Arbiter/AI/Utility/Consideration.cpp
-        src/Arbiter/AI/Utility/ResponseCurve.cpp
-        src/Arbiter/AI/Utility/LinearCurve.cpp
-        src/Arbiter/AI/Utility/Action.cpp
+        src/Arbiter/AI/Utility/Curves/LinearCurve.cpp
+        src/Arbiter/AI/Blackboard.cpp
+        src/Arbiter/AI/Utility/Actions/Action.cpp
+        src/Arbiter/AI/Utility/Actions/ShootAction.cpp
+        src/Arbiter/AI/Utility/Actions/SurrenderAction.cpp
+        src/Arbiter/AI/Utility/Actions/TakeCoverAction.cpp
+        src/Arbiter/AI/UtilityAIAgent.cpp
 )
 
 target_include_directories(Arbiter PRIVATE include)
@@ -46,3 +50,22 @@ target_link_libraries(Arbiter PRIVATE
         SFML::Window
         SFML::System
 )
+
+enable_testing()
+
+add_executable(ArbiterTests
+        tests/LinearCurveTests.cpp
+        src/Arbiter/AI/Utility/Curves/LinearCurve.cpp
+        src/Arbiter/AI/Utility/Consideration.cpp
+        src/Arbiter/AI/Blackboard.cpp
+        src/Arbiter/AI/Utility/Actions/Action.cpp
+)
+
+target_include_directories(ArbiterTests PRIVATE include)
+
+target_link_libraries(ArbiterTests PRIVATE
+        gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(ArbiterTests)

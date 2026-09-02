@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "Arbiter/AI/Utility/Consideration.h"
+#include "Arbiter/AI/Blackboard.h"
 
 namespace arbiter
 {
@@ -10,10 +11,10 @@ namespace arbiter
     {
     public:
         virtual ~Action() = default;
-        virtual float ComputeScore();
+        virtual float ComputeScore(const Blackboard& blackboard);
         virtual void Execute() = 0;
         void AddConsideration(Consideration consideration);
-    private:
+    protected:
         std::vector<Consideration> m_considerations;
     };
 }

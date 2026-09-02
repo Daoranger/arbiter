@@ -6,6 +6,6 @@ namespace arbiter
     {
     public:
         virtual ~ResponseCurve() = default;
-        virtual float Evaluate(float factor) = 0;
+        virtual float Evaluate(float factor) const = 0;
     };
 }

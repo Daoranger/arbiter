@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Arbiter/AI/Utility/ResponseCurve.h"
-
 #include <memory>
+
+#include "Curves/ResponseCurve.h"
+#include "Arbiter/AI/Blackboard.h"
 
 
 namespace arbiter
@@ -10,10 +11,11 @@ namespace arbiter
     class Consideration
     {
     public:
-        explicit Consideration(std::unique_ptr<ResponseCurve> curve);
-        float Evaluate(float factor);
+        Consideration(std::unique_ptr<ResponseCurve> curve, std::string factorKey);
+        float Evaluate(const Blackboard& blackboard) const;
 
     private:
         std::unique_ptr<ResponseCurve> m_curve;
+        std::string m_factorKey;
     };
 }
