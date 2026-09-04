@@ -1,16 +1,14 @@
-//
-// Created by hoang on 9/2/2026.
-//
+#pragma once
 
-#ifndef ARBITER_HEALACTION_H
-#define ARBITER_HEALACTION_H
+#include "Arbiter/AI/Utility/Actions/Action.h"
 
+namespace arbiter
+{
+    class HealAction : public Action
+    {
+    public:
+        HealAction();
+        void Execute() override;
+    };
+}
 
-
-class HealAction {
-
-};
-
-
-
-#endif //ARBITER_HEALACTION_H

@@ -2,6 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Arbiter/ECS/Entity.h"
+
 namespace arbiter
 {
     class Application
@@ -16,5 +18,7 @@ namespace arbiter
         void Render();
 
         sf::RenderWindow m_window;
+
+        Entity m_entity;
     };
 }

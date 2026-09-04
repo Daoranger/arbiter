@@ -1,16 +1,13 @@
-//
-// Created by hoang on 9/2/2026.
-//
+#pragma once
 
-#ifndef ARBITER_EATACTION_H
-#define ARBITER_EATACTION_H
+#include "Arbiter/AI/Utility/Actions/Action.h"
 
-
-
-class EatAction {
-
-};
-
-
-
-#endif //ARBITER_EATACTION_H
+namespace arbiter
+{
+    class EatAction : public Action
+    {
+    public:
+        EatAction();
+        void Execute() override;
+    };
+}

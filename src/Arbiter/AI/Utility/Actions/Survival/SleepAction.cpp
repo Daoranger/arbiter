@@ -1,5 +1,16 @@
-//
-// Created by hoang on 9/2/2026.
-//
+#include "Arbiter/AI/Utility/Actions/Survival/SleepAction.h"
 
-#include "../../../../../../include/Arbiter/AI/Utility/Actions/Survival/SleepAction.h"
+#include <iostream>
+
+#include "Arbiter/AI/Utility/Curves/LinearCurve.h"
+#include "Arbiter/AI/Utility/Curves/StepCurve.h"
+
+arbiter::SleepAction::SleepAction()
+{
+    AddConsideration(Consideration(std::make_unique<LinearCurve>(-1.0f, 1.0f), "Energy"));
+}
+
+void arbiter::SleepAction::Execute()
+{
+    std::cout << "Sleeping zzzz\n";
+}

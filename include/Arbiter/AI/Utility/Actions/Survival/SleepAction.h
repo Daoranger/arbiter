@@ -1,16 +1,13 @@
-//
-// Created by hoang on 9/2/2026.
-//
+#pragma once
 
-#ifndef ARBITER_SLEEPACTION_H
-#define ARBITER_SLEEPACTION_H
+#include "Arbiter/AI/Utility/Actions/Action.h"
 
-
-
-class SleepAction {
-
-};
-
-
-
-#endif //ARBITER_SLEEPACTION_H
+namespace arbiter
+{
+    class SleepAction : public Action
+    {
+    public:
+        SleepAction();
+        void Execute() override;
+    };
+}

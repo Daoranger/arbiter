@@ -1,4 +1,4 @@
-#include "../../../../../include/Arbiter/AI/Utility/Curves/LinearCurve.h"
+#include "Arbiter/AI/Utility/Curves/LinearCurve.h"
 
 #include <algorithm>
 

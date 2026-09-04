@@ -1,16 +1,11 @@
-//
-// Created by hoang on 9/2/2026.
-//
+#pragma once
+#include "ResponseCurve.h"
 
-#ifndef ARBITER_STEPCURVE_H
-#define ARBITER_STEPCURVE_H
-
-
-
-class StepCurve {
-
+class StepCurve : public arbiter::ResponseCurve
+{
+public:
+    StepCurve();
+    float Evaluate(float factor) const override;
+private:
 };
 
-
-
-#endif //ARBITER_STEPCURVE_H
