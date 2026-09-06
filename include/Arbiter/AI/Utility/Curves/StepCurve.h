@@ -1,11 +1,14 @@
 #pragma once
 #include "ResponseCurve.h"
 
-class StepCurve : public arbiter::ResponseCurve
+namespace arbiter
 {
-public:
-    StepCurve();
-    float Evaluate(float factor) const override;
-private:
-};
+    class StepCurve : public ResponseCurve
+    {
+    public:
+        StepCurve();
+        float Evaluate(float factor) const override;
+    private:
+    };
+}
 

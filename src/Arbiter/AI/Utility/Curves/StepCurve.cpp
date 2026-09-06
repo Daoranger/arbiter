@@ -4,11 +4,11 @@
 
 #include "Arbiter/AI/Utility/Curves/StepCurve.h"
 
-StepCurve::StepCurve()
+arbiter::StepCurve::StepCurve()
 {
 }
 
-float StepCurve::Evaluate(float factor) const
+float arbiter::StepCurve::Evaluate(float factor) const
 {
     if (factor <= 0.0f)
     {
