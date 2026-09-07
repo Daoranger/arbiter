@@ -2,13 +2,14 @@
 
 #include <iostream>
 
+#include "Arbiter/AI/Utility/Curves/LogisticCurve.h"
 #include "Arbiter/AI/Utility/Curves/LinearCurve.h"
-#include "Arbiter/AI/Utility/Curves/StepCurve.h"
+#include "Arbiter/AI/Utility/Curves/ThresholdCurve.h"
 
 arbiter::HealAction::HealAction()
 {
-    AddConsideration(Consideration(std::make_unique<LinearCurve>(-1.0f, 1.0f), "Health"));
-    AddConsideration(Consideration(std::make_unique<StepCurve>(), "MedCount"));
+    AddConsideration(Consideration(std::make_unique<LogisticCurve>(15.0f, 0.3f), "Health"));
+    AddConsideration(Consideration(std::make_unique<ThresholdCurve>(), "MedCount"));
 }
 
 void arbiter::HealAction::Execute()

@@ -35,21 +35,22 @@ add_executable(Arbiter
         src/Arbiter/Core/Application.cpp
 
         src/Arbiter/AI/Utility/Consideration.cpp
+        src/Arbiter/AI/Utility/Curves/ThresholdCurve.cpp
         src/Arbiter/AI/Utility/Curves/LinearCurve.cpp
-        src/Arbiter/AI/Utility/Curves/StepCurve.cpp
+        src/Arbiter/AI/Utility/Curves/LogisticCurve.cpp
 
         src/Arbiter/AI/Blackboard.cpp
 
         src/Arbiter/AI/Utility/Actions/Action.cpp
-        src/Arbiter/AI/Utility/Actions/ShootAction.cpp
-        src/Arbiter/AI/Utility/Actions/SurrenderAction.cpp
-        src/Arbiter/AI/Utility/Actions/TakeCoverAction.cpp
+        src/Arbiter/AI/Utility/Actions/Combat/ShootAction.cpp
+        src/Arbiter/AI/Utility/Actions/Combat/SurrenderAction.cpp
+        src/Arbiter/AI/Utility/Actions/Combat/TakeCoverAction.cpp
         src/Arbiter/AI/Utility/Actions/Survival/HealAction.cpp
         src/Arbiter/AI/Utility/Actions/Survival/EatAction.cpp
         src/Arbiter/AI/Utility/Actions/Survival/DrinkAction.cpp
         src/Arbiter/AI/Utility/Actions/Survival/SleepAction.cpp
 
-        src/Arbiter/AI/UtilityAIAgent.cpp
+        src/Arbiter/AI/Utility/UtilityAIAgent.cpp
 
         src/Arbiter/ECS/Entity.cpp
 )
@@ -65,8 +66,12 @@ target_link_libraries(Arbiter PRIVATE
 enable_testing()
 
 add_executable(ArbiterTests
+        tests/ThresholdCurveTests.cpp
         tests/LinearCurveTests.cpp
+        tests/LogisticCurveTests.cpp
+        src/Arbiter/AI/Utility/Curves/ThresholdCurve.cpp
         src/Arbiter/AI/Utility/Curves/LinearCurve.cpp
+        src/Arbiter/AI/Utility/Curves/LogisticCurve.cpp
         src/Arbiter/AI/Utility/Consideration.cpp
         src/Arbiter/AI/Blackboard.cpp
         src/Arbiter/AI/Utility/Actions/Action.cpp

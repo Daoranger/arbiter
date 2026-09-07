@@ -10,7 +10,6 @@ arbiter::Entity::Entity()
     blackboard.Set("Hunger", currentHunger/maxHunger);
     blackboard.Set("Thirst", currentThirst/maxThirst);
     blackboard.Set("Energy", currentEnergy/maxEnergy);
-    blackboard.Set("Temperature", bodyTemp);
     blackboard.Set("MedCount", medCount);
     blackboard.Set("FoodCount", foodCount);
     blackboard.Set("WaterCount", waterCount);

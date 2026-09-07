@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "Arbiter/AI/Utility/Curves/LinearCurve.h"
-#include "Arbiter/AI/Utility/Curves/StepCurve.h"
+#include "Arbiter/AI/Utility/Curves/ThresholdCurve.h"
 
 arbiter::SleepAction::SleepAction()
 {
