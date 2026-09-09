@@ -1,13 +1,21 @@
-#include "Arbiter/AI/Utility/UtilityAIAgent.h"
+#include "Arbiter/AI/Utility/Brain.h"
 
 #include <iostream>
 
-void arbiter::UtilityAIAgent::AddAction(std::unique_ptr<Action> action)
+arbiter::Brain::Brain()
+{
+    AddAction(std::move(healAction));
+    AddAction(std::move(eatAction));
+    AddAction(std::move(drinkAction));
+    AddAction(std::move(sleepAction));
+}
+
+void arbiter::Brain::AddAction(std::unique_ptr<Action> action)
 {
     m_actions.push_back(std::move(action));
 }
 
-void arbiter::UtilityAIAgent::Decide(const Blackboard& blackboard)
+void arbiter::Brain::Decide(const Blackboard& blackboard)
 {
     Action* chosenAction {nullptr};
     float highestScore {0.0f};

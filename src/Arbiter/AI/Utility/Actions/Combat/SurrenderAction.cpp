@@ -1,4 +1,4 @@
-#include "../../../../../../include/Arbiter/AI/Utility/Actions/Combat/SurrenderAction.h"
+#include "Arbiter/AI/Utility/Actions/Combat/SurrenderAction.h"
 
 #include <iostream>
 #include <algorithm>

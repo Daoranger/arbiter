@@ -13,11 +13,6 @@ arbiter::Entity::Entity()
     blackboard.Set("MedCount", medCount);
     blackboard.Set("FoodCount", foodCount);
     blackboard.Set("WaterCount", waterCount);
-
-    agent.AddAction(std::move(healAction));
-    agent.AddAction(std::move(eatAction));
-    agent.AddAction(std::move(drinkAction));
-    agent.AddAction(std::move(sleepAction));
 }
 
 void arbiter::Entity::Update()

@@ -8,8 +8,8 @@
 
 arbiter::HealAction::HealAction()
 {
-    AddConsideration(Consideration(std::make_unique<LogisticCurve>(15.0f, 0.3f), "Health"));
-    AddConsideration(Consideration(std::make_unique<ThresholdCurve>(), "MedCount"));
+    AddConsideration(Consideration(std::make_unique<LogisticCurve>(-15.0f, 0.3f), "Health"));
+    AddConsideration(Consideration(std::make_unique<ThresholdCurve>(0.0f), "MedCount"));
 }
 
 void arbiter::HealAction::Execute()

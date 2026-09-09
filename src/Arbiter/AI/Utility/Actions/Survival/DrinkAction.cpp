@@ -8,7 +8,7 @@
 arbiter::DrinkAction::DrinkAction()
 {
     AddConsideration(Consideration(std::make_unique<LinearCurve>(-1.0f, 1.0f), "Thirst"));
-    AddConsideration(Consideration(std::make_unique<ThresholdCurve>(), "WaterCount"));
+    AddConsideration(Consideration(std::make_unique<ThresholdCurve>(0.0f), "WaterCount"));
 }
 
 void arbiter::DrinkAction::Execute()
