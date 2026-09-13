@@ -4,10 +4,6 @@
 
 arbiter::Brain::Brain()
 {
-    AddAction(std::move(healAction));
-    AddAction(std::move(eatAction));
-    AddAction(std::move(drinkAction));
-    AddAction(std::move(sleepAction));
 }
 
 void arbiter::Brain::AddAction(std::unique_ptr<Action> action)

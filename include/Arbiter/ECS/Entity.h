@@ -1,5 +1,7 @@
 #pragma once
 
+#include "SFML/System/Vector2.hpp"
+
 #include "Arbiter/AI/Blackboard.h"
 #include "Arbiter/AI/Utility/Brain.h"
 
@@ -23,6 +25,8 @@ namespace arbiter
         Blackboard blackboard;
         Brain agent;
 
+    private:
+        sf::Vector2f m_position;
     };
 }
 
