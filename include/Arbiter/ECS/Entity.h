@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Arbiter/AI/Blackboard.h"
+#include "Arbiter/AI/Kinematic.h"
 #include "Arbiter/AI/Utility/Brain.h"
 #include "Arbiter/AI/Steering/Steering.h"
 
@@ -22,6 +23,7 @@ namespace arbiter
         float waterCount = 1.0f;
 
         Blackboard blackboard;
+        Kinematic kinematic;
         Brain agent;
         Steering steering;
     };

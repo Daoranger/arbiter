@@ -17,5 +17,6 @@ arbiter::Entity::Entity()
 
 void arbiter::Entity::Update(float dt)
 {
+    steering.Update(kinematic, dt);
     agent.Decide(blackboard, *this, dt);
 }

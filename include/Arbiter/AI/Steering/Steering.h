@@ -11,9 +11,8 @@ namespace arbiter
     class Steering
     {
     public:
-        void Update(float dt);
-
-        Kinematic kinematic;
+        void Update(Kinematic& kinematic, float dt);
+        void AddBehavior(std::unique_ptr<SteeringBehavior> behavior);
 
     private:
         std::vector<std::unique_ptr<SteeringBehavior>> m_behaviors;
