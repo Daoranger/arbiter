@@ -40,6 +40,7 @@ add_executable(Arbiter
         src/Arbiter/AI/Utility/Curves/LogisticCurve.cpp
 
         src/Arbiter/AI/Blackboard.cpp
+        src/Arbiter/AI/Steering/Steering.cpp
 
         src/Arbiter/AI/Utility/Actions/Action.cpp
         src/Arbiter/AI/Utility/Actions/Combat/ShootAction.cpp

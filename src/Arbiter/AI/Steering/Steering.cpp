@@ -1,9 +1,5 @@
-//
-// Created by hoang on 9/12/2026.
-//
+#include "Arbiter/AI/Steering/Steering.h"
 
-#include "../../../../include/Arbiter/AI/Steering/Steering.h"
-
-namespace arbiter
+void arbiter::Steering::Update(float dt)
 {
-} // arbiter
+}
