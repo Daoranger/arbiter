@@ -44,9 +44,6 @@ add_executable(Arbiter
         src/Arbiter/AI/Steering/Behaviors/Seek.cpp
 
         src/Arbiter/AI/Utility/Actions/Action.cpp
-        src/Arbiter/AI/Utility/Actions/Combat/ShootAction.cpp
-        src/Arbiter/AI/Utility/Actions/Combat/SurrenderAction.cpp
-        src/Arbiter/AI/Utility/Actions/Combat/TakeCoverAction.cpp
         src/Arbiter/AI/Utility/Actions/Survival/HealAction.cpp
         src/Arbiter/AI/Utility/Actions/Survival/EatAction.cpp
         src/Arbiter/AI/Utility/Actions/Survival/DrinkAction.cpp

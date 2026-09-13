@@ -4,8 +4,18 @@
 
 #include "Arbiter/ECS/Entity.h"
 
+#include "Arbiter/AI/Utility/Actions/Survival/EatAction.h"
+#include "Arbiter/AI/Utility/Actions/Survival/DrinkAction.h"
+#include "Arbiter/AI/Utility/Actions/Survival/SleepAction.h"
+#include "Arbiter/AI/Utility/Actions/Survival/HealAction.h"
+
 arbiter::Entity::Entity()
 {
+    agent.AddAction(std::make_unique<EatAction>());
+    agent.AddAction(std::make_unique<DrinkAction>());
+    agent.AddAction(std::make_unique<SleepAction>());
+    agent.AddAction(std::make_unique<HealAction>());
+
     blackboard.Set("Health", currentHealth/maxHealth);
     blackboard.Set("Hunger", currentHunger/maxHunger);
     blackboard.Set("Thirst", currentThirst/maxThirst);
