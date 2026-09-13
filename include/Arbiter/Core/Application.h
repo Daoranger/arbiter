@@ -18,6 +18,7 @@ namespace arbiter
         void Render();
 
         sf::RenderWindow m_window;
+        sf::Clock m_clock;
 
         Entity m_entity;
     };

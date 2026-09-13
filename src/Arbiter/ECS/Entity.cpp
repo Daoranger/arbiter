@@ -15,7 +15,7 @@ arbiter::Entity::Entity()
     blackboard.Set("WaterCount", waterCount);
 }
 
-void arbiter::Entity::Update()
+void arbiter::Entity::Update(float dt)
 {
-    agent.Decide(blackboard);
+    agent.Decide(blackboard, *this, dt);
 }

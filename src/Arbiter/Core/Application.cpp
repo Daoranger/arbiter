@@ -32,7 +32,8 @@ void arbiter::Application::ProcessEvents()
 
 void arbiter::Application::Update()
 {
-    m_entity.Update();
+    float dt = m_clock.restart().asSeconds();
+    m_entity.Update(dt);
 }
 
 void arbiter::Application::Render()

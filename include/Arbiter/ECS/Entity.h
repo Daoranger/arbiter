@@ -1,9 +1,8 @@
 #pragma once
 
-#include "SFML/System/Vector2.hpp"
-
 #include "Arbiter/AI/Blackboard.h"
 #include "Arbiter/AI/Utility/Brain.h"
+#include "Arbiter/AI/Steering/Steering.h"
 
 namespace arbiter
 {
@@ -11,7 +10,7 @@ namespace arbiter
     {
     public:
         Entity();
-        void Update();
+        void Update(float dt);
 
         float currentHealth = 10.0f, maxHealth = 100.0f;
         float currentEnergy = 100.0f, maxEnergy = 100.0f;
@@ -24,9 +23,7 @@ namespace arbiter
 
         Blackboard blackboard;
         Brain agent;
-
-    private:
-        sf::Vector2f m_position;
+        Steering steering;
     };
 }
 
