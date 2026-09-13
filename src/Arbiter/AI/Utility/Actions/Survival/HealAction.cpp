@@ -7,12 +7,13 @@
 #include "Arbiter/AI/Utility/Curves/ThresholdCurve.h"
 
 arbiter::HealAction::HealAction()
+    : Action("Heal")
 {
     AddConsideration(Consideration(std::make_unique<LogisticCurve>(-15.0f, 0.3f), "Health"));
     AddConsideration(Consideration(std::make_unique<ThresholdCurve>(0.0f), "MedCount"));
 }
 
-void arbiter::HealAction::Execute()
+void arbiter::HealAction::Execute(Entity& entity, float dt)
 {
     std::cout << "Healing\n";
 }

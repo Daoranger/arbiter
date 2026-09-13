@@ -10,12 +10,14 @@
 
 namespace arbiter
 {
+    class Entity;
+
     class Brain
     {
     public:
         Brain();
         void AddAction(std::unique_ptr<Action> action);
-        void Decide(const Blackboard& blackboard);
+        void Decide(const Blackboard& blackboard, Entity& entity, float dt);
 
     private:
         std::vector<std::unique_ptr<Action>> m_actions;

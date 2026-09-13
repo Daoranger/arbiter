@@ -5,10 +5,11 @@
 
 #include "Arbiter/AI/Utility/Consideration.h"
 #include "Arbiter/AI/Blackboard.h"
-#include "Arbiter/ECS/Entity.h"
 
 namespace arbiter
 {
+    class Entity;
+
     class Action
     {
     public:

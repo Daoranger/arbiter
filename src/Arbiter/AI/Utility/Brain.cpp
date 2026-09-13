@@ -11,7 +11,7 @@ void arbiter::Brain::AddAction(std::unique_ptr<Action> action)
     m_actions.push_back(std::move(action));
 }
 
-void arbiter::Brain::Decide(const Blackboard& blackboard)
+void arbiter::Brain::Decide(const Blackboard& blackboard, Entity& entity, float dt)
 {
     Action* chosenAction {nullptr};
     float highestScore {0.0f};
@@ -29,6 +29,6 @@ void arbiter::Brain::Decide(const Blackboard& blackboard)
 
     if (chosenAction)
     {
-        chosenAction->Execute();
+        chosenAction->Execute(entity, dt);
     }
 }

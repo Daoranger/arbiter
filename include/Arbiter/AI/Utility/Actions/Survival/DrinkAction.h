@@ -8,6 +8,6 @@ namespace arbiter
     {
     public:
         DrinkAction();
-        void Execute() override;
+        void Execute(Entity& entity, float dt) override;
     };
 }

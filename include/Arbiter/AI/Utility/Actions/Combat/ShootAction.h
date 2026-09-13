@@ -7,6 +7,7 @@ namespace arbiter
     class ShootAction : public Action
     {
     public:
-        void Execute() override;
+        ShootAction();
+        void Execute(Entity& entity, float dt) override;
     };
 }

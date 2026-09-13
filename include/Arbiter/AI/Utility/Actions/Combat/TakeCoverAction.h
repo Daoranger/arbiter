@@ -7,6 +7,7 @@ namespace arbiter
     class TakeCoverAction : public Action
     {
     public:
-        void Execute() override;
+        TakeCoverAction();
+        void Execute(Entity& entity, float dt) override;
     };
 }
