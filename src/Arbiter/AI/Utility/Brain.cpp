@@ -27,6 +27,8 @@ void arbiter::Brain::Decide(const Blackboard& blackboard, Entity& entity, float 
         }
     }
 
+    m_currentAction = chosenAction;
+
     if (chosenAction)
     {
         chosenAction->Execute(entity, dt);

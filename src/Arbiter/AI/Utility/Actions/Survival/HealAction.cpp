@@ -1,10 +1,10 @@
 #include "Arbiter/AI/Utility/Actions/Survival/HealAction.h"
 
-#include <iostream>
-
+#include "Arbiter/AI/Steering/Behaviors/Seek.h"
 #include "Arbiter/AI/Utility/Curves/LogisticCurve.h"
 #include "Arbiter/AI/Utility/Curves/LinearCurve.h"
 #include "Arbiter/AI/Utility/Curves/ThresholdCurve.h"
+#include "Arbiter/ECS/Entity.h"
 
 arbiter::HealAction::HealAction()
     : Action("Heal")
@@ -15,5 +15,6 @@ arbiter::HealAction::HealAction()
 
 void arbiter::HealAction::Execute(Entity& entity, float dt)
 {
-    std::cout << "Healing\n";
+    entity.steering.ClearBehaviors();
+    entity.steering.AddBehavior(std::make_unique<Seek>(sf::Vector2f(450.0f, 550.0f)));
 }

@@ -1,9 +1,8 @@
 #include "Arbiter/AI/Utility/Actions/Survival/SleepAction.h"
 
-#include <iostream>
-
+#include "Arbiter/AI/Steering/Behaviors/Seek.h"
 #include "Arbiter/AI/Utility/Curves/LinearCurve.h"
-#include "Arbiter/AI/Utility/Curves/ThresholdCurve.h"
+#include "Arbiter/ECS/Entity.h"
 
 arbiter::SleepAction::SleepAction()
     : Action("Sleep")
@@ -13,5 +12,6 @@ arbiter::SleepAction::SleepAction()
 
 void arbiter::SleepAction::Execute(Entity& entity, float dt)
 {
-    std::cout << "Sleeping zzzz\n";
+    entity.steering.ClearBehaviors();
+    entity.steering.AddBehavior(std::make_unique<Seek>(sf::Vector2f(850.0f, 300.0f)));
 }

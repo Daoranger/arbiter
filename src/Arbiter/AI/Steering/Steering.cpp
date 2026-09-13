@@ -33,3 +33,8 @@ void arbiter::Steering::AddBehavior(std::unique_ptr<SteeringBehavior> behavior)
 {
     m_behaviors.push_back(std::move(behavior));
 }
+
+void arbiter::Steering::ClearBehaviors()
+{
+    m_behaviors.clear();
+}

@@ -13,6 +13,7 @@ namespace arbiter
     public:
         void Update(Kinematic& kinematic, float dt);
         void AddBehavior(std::unique_ptr<SteeringBehavior> behavior);
+        void ClearBehaviors();
 
     private:
         std::vector<std::unique_ptr<SteeringBehavior>> m_behaviors;

@@ -1,9 +1,9 @@
 #include "Arbiter/AI/Utility/Actions/Survival/EatAction.h"
 
-#include <iostream>
-
+#include "Arbiter/AI/Steering/Behaviors/Seek.h"
 #include "Arbiter/AI/Utility/Curves/LinearCurve.h"
 #include "Arbiter/AI/Utility/Curves/ThresholdCurve.h"
+#include "Arbiter/ECS/Entity.h"
 
 arbiter::EatAction::EatAction()
     : Action("Eat")
@@ -14,5 +14,6 @@ arbiter::EatAction::EatAction()
 
 void arbiter::EatAction::Execute(Entity& entity, float dt)
 {
-    std::cout << "Eating food nom nom nom\n";
+    entity.steering.ClearBehaviors();
+    entity.steering.AddBehavior(std::make_unique<Seek>(sf::Vector2f(450.0f, 50.0f)));
 }

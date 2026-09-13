@@ -11,6 +11,10 @@
 
 arbiter::Entity::Entity()
 {
+    kinematic.position = sf::Vector2f(450.0f, 300.0f);
+    kinematic.maxSpeed = 100.0f;
+    kinematic.maxAcceleration = 200.0f;
+
     agent.AddAction(std::make_unique<EatAction>());
     agent.AddAction(std::make_unique<DrinkAction>());
     agent.AddAction(std::make_unique<SleepAction>());
