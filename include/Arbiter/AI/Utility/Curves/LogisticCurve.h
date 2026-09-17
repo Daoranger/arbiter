@@ -1,9 +1,9 @@
 #pragma once
-#include "Arbiter/AI/Utility/Curves/ResponseCurve.h"
+#include "Arbiter/AI/Utility/Curves/Curve.h"
 
 namespace arbiter
 {
-    class LogisticCurve : public ResponseCurve
+    class LogisticCurve : public Curve
     {
     public:
         LogisticCurve(float steepness, float midpoint);

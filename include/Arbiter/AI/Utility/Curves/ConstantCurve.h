@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ResponseCurve.h"
+#include "Curve.h"
 
 namespace arbiter
 {
-    class ConstantCurve : public arbiter::ResponseCurve
+    class ConstantCurve : public arbiter::Curve
     {
     public:
         ConstantCurve(float constant);

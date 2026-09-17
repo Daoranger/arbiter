@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "Curves/ResponseCurve.h"
+#include "Curves/Curve.h"
 #include "Arbiter/AI/Blackboard.h"
 
 
@@ -11,11 +11,11 @@ namespace arbiter
     class Consideration
     {
     public:
-        Consideration(std::unique_ptr<ResponseCurve> curve, std::string factorKey);
+        Consideration(std::unique_ptr<Curve> curve, std::string factorKey);
         float Evaluate(const Blackboard& blackboard) const;
 
     private:
-        std::unique_ptr<ResponseCurve> m_curve;
+        std::unique_ptr<Curve> m_curve;
         std::string m_factorKey;
     };
 }

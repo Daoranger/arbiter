@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Arbiter/AI/Utility/Curves/ResponseCurve.h"
+#include "Arbiter/AI/Utility/Curves/Curve.h"
 
 namespace arbiter
 {
-    class LinearCurve : public ResponseCurve
+    class LinearCurve : public Curve
     {
     public:
         LinearCurve(float slope, float intercept);

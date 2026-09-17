@@ -2,10 +2,10 @@
 
 namespace arbiter
 {
-    class ResponseCurve
+    class Curve
     {
     public:
-        virtual ~ResponseCurve() = default;
+        virtual ~Curve() = default;
         virtual float Evaluate(float factor) const = 0;
     };
 }

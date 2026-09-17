@@ -1,7 +1,7 @@
 #include "Arbiter/AI/Utility/Consideration.h"
 
 
-arbiter::Consideration::Consideration(std::unique_ptr<ResponseCurve> curve, std::string factorKey)
+arbiter::Consideration::Consideration(std::unique_ptr<Curve> curve, std::string factorKey)
     : m_curve(std::move(curve))
     , m_factorKey(std::move(factorKey))
 {

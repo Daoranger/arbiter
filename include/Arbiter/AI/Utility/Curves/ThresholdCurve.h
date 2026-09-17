@@ -1,9 +1,9 @@
 #pragma once
-#include "Arbiter/AI/Utility/Curves/ResponseCurve.h"
+#include "Arbiter/AI/Utility/Curves/Curve.h"
 
 namespace arbiter
 {
-    class ThresholdCurve : public ResponseCurve
+    class ThresholdCurve : public Curve
     {
     public:
         ThresholdCurve(float threshold);
