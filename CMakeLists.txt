@@ -62,6 +62,13 @@ target_link_libraries(Arbiter PRIVATE
         SFML::System
 )
 
+# copy assets/ from the source dir next to the exe after every build
+add_custom_command(TARGET Arbiter POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+                ${CMAKE_SOURCE_DIR}/assets
+                $<TARGET_FILE_DIR:Arbiter>/assets
+)
+
 enable_testing()
 
 add_executable(ArbiterTests

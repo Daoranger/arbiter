@@ -14,7 +14,7 @@ namespace arbiter
     public:
         Entity();
         void Update(float dt);
-        void Render();
+        void Render(sf::RenderTarget& target);
 
         float currentHealth = 10.0f, maxHealth = 100.0f;
         float currentEnergy = 2.0f, maxEnergy = 100.0f;
@@ -33,6 +33,7 @@ namespace arbiter
     private:
         sf::Texture m_texture;
         sf::Sprite m_sprite;
+        sf::CircleShape m_debugCircle;
     };
 }
 

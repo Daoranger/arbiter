@@ -40,5 +40,7 @@ void arbiter::Application::Render()
 {
     m_window.clear(sf::Color::Black);
 
+    m_entity.Render(m_window);
+
     m_window.display();
 }
