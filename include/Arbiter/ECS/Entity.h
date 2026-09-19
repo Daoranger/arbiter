@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+
 #include "Arbiter/AI/Blackboard.h"
 #include "Arbiter/AI/Kinematic.h"
 #include "Arbiter/AI/Utility/Brain.h"
@@ -12,6 +14,7 @@ namespace arbiter
     public:
         Entity();
         void Update(float dt);
+        void Render();
 
         float currentHealth = 10.0f, maxHealth = 100.0f;
         float currentEnergy = 2.0f, maxEnergy = 100.0f;
@@ -26,6 +29,10 @@ namespace arbiter
         Kinematic kinematic;
         Brain agent;
         Steering steering;
+
+    private:
+        sf::Texture m_texture;
+        sf::Sprite m_sprite;
     };
 }
 

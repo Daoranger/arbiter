@@ -1,9 +1,9 @@
 #include "Arbiter/AI/Utility/Actions/Survival/DrinkAction.h"
 
-#include "Arbiter/AI/Steering/Behaviors/Seek.h"
+#include <iostream>
+
 #include "Arbiter/AI/Utility/Curves/LinearCurve.h"
 #include "Arbiter/AI/Utility/Curves/ThresholdCurve.h"
-#include "Arbiter/ECS/Entity.h"
 
 arbiter::DrinkAction::DrinkAction()
     : Action("Drink")
@@ -14,6 +14,5 @@ arbiter::DrinkAction::DrinkAction()
 
 void arbiter::DrinkAction::Execute(Entity& entity, float dt)
 {
-    entity.steering.ClearBehaviors();
-    entity.steering.AddBehavior(std::make_unique<Seek>(sf::Vector2f(50.0f, 300.0f)));
+    std::cout << "Drinking water\n";
 }
