@@ -33,8 +33,11 @@ void arbiter::Application::ProcessEvents()
 void arbiter::Application::Update()
 {
     float dt = m_clock.restart().asSeconds();
+    sf::Vector2i mousePixel = sf::Mouse::getPosition(m_window);
+    sf::Vector2f mouseWorld = m_window.mapPixelToCoords(mousePixel);
+
     m_entity.Update(dt);
-    m_player.Update(dt);
+    m_player.Update(dt, mouseWorld);
 }
 
 void arbiter::Application::Render()

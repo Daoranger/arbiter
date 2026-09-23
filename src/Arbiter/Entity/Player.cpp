@@ -26,7 +26,7 @@ arbiter::Player::Player()
     kinematic.maxSpeed = 250.0f;
 }
 
-void arbiter::Player::Update(float dt)
+void arbiter::Player::Update(float dt, sf::Vector2f mouseWorld)
 {
     sf::Vector2f direction(0.0f, 0.0f);
 
@@ -40,13 +40,13 @@ void arbiter::Player::Update(float dt)
         direction.x += 1.0f;
 
     if (direction.lengthSquared() > 0.0f)
-    {
         direction = direction.normalized();
-        kinematic.orientation = std::atan2(direction.y, direction.x);
-    }
 
     kinematic.velocity = direction * kinematic.maxSpeed;
     kinematic.position += kinematic.velocity * dt;
+
+    sf::Vector2f toMouse = mouseWorld - kinematic.position;
+    kinematic.orientation = std::atan2(toMouse.y, toMouse.x);
 }
 
 void arbiter::Player::Render(sf::RenderTarget& target)

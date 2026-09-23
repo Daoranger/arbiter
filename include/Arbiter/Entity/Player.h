@@ -10,7 +10,7 @@ namespace arbiter
     {
     public:
         Player();
-        void Update(float dt);
+        void Update(float dt, sf::Vector2f mouseWorld);
         void Render(sf::RenderTarget& target);
 
         Kinematic kinematic;
