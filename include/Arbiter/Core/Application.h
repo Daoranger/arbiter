@@ -17,9 +17,11 @@ namespace arbiter
         void ProcessEvents();
         void Update();
         void Render();
+        void RenderGrid();
 
         sf::RenderWindow m_window;
         sf::Clock m_clock;
+        sf::View m_camera;
         Entity m_entity;
         Player m_player;
     };
