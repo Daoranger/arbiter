@@ -32,6 +32,8 @@ namespace arbiter
 
     private:
         sf::CircleShape m_circle;
+        sf::CircleShape m_leftHand;
+        sf::CircleShape m_rightHand;
     };
 }
 

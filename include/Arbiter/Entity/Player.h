@@ -16,5 +16,7 @@ namespace arbiter
         Kinematic kinematic;
     private:
         sf::CircleShape m_circle;
+        sf::CircleShape m_leftHand;
+        sf::CircleShape m_rightHand;
     };
 }

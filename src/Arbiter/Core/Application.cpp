@@ -39,7 +39,7 @@ void arbiter::Application::Update()
 
 void arbiter::Application::Render()
 {
-    m_window.clear(sf::Color::Black);
+    m_window.clear(sf::Color::White);
 
     m_entity.Render(m_window);
     m_player.Render(m_window);
