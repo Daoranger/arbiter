@@ -2,7 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Arbiter/ECS/Entity.h"
+#include "Arbiter/Entity/Entity.h"
+#include "Arbiter/Entity/Player.h"
 
 namespace arbiter
 {
@@ -20,5 +21,6 @@ namespace arbiter
         sf::RenderWindow m_window;
         sf::Clock m_clock;
         Entity m_entity;
+        Player m_player;
     };
 }

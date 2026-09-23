@@ -51,7 +51,8 @@ add_executable(Arbiter
 
         src/Arbiter/AI/Utility/Brain.cpp
 
-        src/Arbiter/ECS/Entity.cpp
+        src/Arbiter/Entity/Entity.cpp
+        src/Arbiter/Entity/Player.cpp
 )
 
 target_include_directories(Arbiter PRIVATE include)

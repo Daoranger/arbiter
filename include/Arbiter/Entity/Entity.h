@@ -16,10 +16,10 @@ namespace arbiter
         void Update(float dt);
         void Render(sf::RenderTarget& target);
 
-        float currentHealth = 10.0f, maxHealth = 100.0f;
-        float currentEnergy = 2.0f, maxEnergy = 100.0f;
-        float currentHunger = 1.1f, maxHunger = 100.0f;
-        float currentThirst = 1.0f, maxThirst = 100.0f;
+        float currentHealth = 100.0f, maxHealth = 100.0f;
+        float currentEnergy = 100.0f, maxEnergy = 100.0f;
+        float currentHunger = 100.0f, maxHunger = 100.0f;
+        float currentThirst = 100.0f, maxThirst = 100.0f;
 
         float medCount = 1.0f;
         float foodCount = 1.0f;
@@ -31,9 +31,7 @@ namespace arbiter
         Steering steering;
 
     private:
-        sf::Texture m_texture;
-        sf::Sprite m_sprite;
-        sf::CircleShape m_debugCircle;
+        sf::CircleShape m_circle;
     };
 }
 

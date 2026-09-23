@@ -1,0 +1,20 @@
+#pragma once
+
+#include <SFML/Graphics.hpp>
+
+#include "Arbiter/AI/Kinematic.h"
+
+namespace arbiter
+{
+    class Player
+    {
+    public:
+        Player();
+        void Update(float dt);
+        void Render(sf::RenderTarget& target);
+
+        Kinematic kinematic;
+    private:
+        sf::CircleShape m_circle;
+    };
+}

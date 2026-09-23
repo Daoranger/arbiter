@@ -1,7 +1,7 @@
 #include "Arbiter/Core/Application.h"
 
 arbiter::Application::Application()
-    : m_window(sf::VideoMode(sf::Vector2u(900, 600)), "Arbiter")
+    : m_window(sf::VideoMode(sf::Vector2u(1280, 720)), "Arbiter")
 {
 }
 
@@ -34,6 +34,7 @@ void arbiter::Application::Update()
 {
     float dt = m_clock.restart().asSeconds();
     m_entity.Update(dt);
+    m_player.Update(dt);
 }
 
 void arbiter::Application::Render()
@@ -41,6 +42,7 @@ void arbiter::Application::Render()
     m_window.clear(sf::Color::Black);
 
     m_entity.Render(m_window);
+    m_player.Render(m_window);
 
     m_window.display();
 }
